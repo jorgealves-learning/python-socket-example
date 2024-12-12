@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "python-socket-example"
+version = "0.1.0"
+description = "UDP and TCP socket implementation examples"
+authors = ["Jorge Alves <jorgeandrealves@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.8.3"
+pre-commit = "^4.0.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

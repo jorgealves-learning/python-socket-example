@@ -1,0 +1,30 @@
+services:
+  tcp-server:
+    build:
+      dockerfile: Dockerfile
+    command: src/server/tcp.py
+    ports:
+      - 7777:7777
+    environment:
+      HOST: 0.0.0.0
+
+  tcp-client:
+    build:
+      dockerfile: Dockerfile
+    environment:
+      HOST: tcp-server
+
+  udp-server:
+    build:
+      dockerfile: Dockerfile
+    command: src/server/udp.py
+    environment:
+      HOST: 0.0.0.0
+    ports:
+      - 8888:8888
+
+  udp-client:
+    build:
+      dockerfile: Dockerfile
+    environment:
+      HOST: udp-server
